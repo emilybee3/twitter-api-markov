@@ -53,7 +53,13 @@ class MarkovMachine(object):
 
         # This is the clumsiest way to make sure it's never longer than
         # 140 characters; can you think of better ways?
-        return text[:140]
+        for word in text:
+            if words(len(text)) >= 140:
+                break
+            else:
+                print text
+
+        return text
 
 
 if __name__ == "__main__":
